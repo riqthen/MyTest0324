@@ -11,5 +11,5 @@ package com.h.mytest.observer;
 * 版  权：互动科技
 */
 public interface Observer {
-    public void updateView(String s);
+    void updateView(String s);
 }

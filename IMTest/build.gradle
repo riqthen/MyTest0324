@@ -1,0 +1,52 @@
+apply plugin: 'com.android.application'
+apply plugin: 'org.greenrobot.greendao'
+android {
+    compileSdkVersion 26
+
+
+
+    defaultConfig {
+        applicationId "com.h.imtest"
+        minSdkVersion 15
+        targetSdkVersion 26
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    sourceSets {
+        main {
+            jniLibs.srcDirs = ['libs']
+        }
+    }
+
+}
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation 'com.android.support:appcompat-v7:26.1.0'
+    implementation 'com.android.support.constraint:constraint-layout:1.0.2'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'com.android.support.test:runner:1.0.1'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
+    implementation files('libs/bugly_2.4.0_imsdk_release.jar')
+    implementation files('libs/imsdk.jar')
+    implementation files('libs/imsdk_group_ext.jar')
+    implementation files('libs/imsdk_msg_ext.jar')
+    implementation files('libs/imsdk_sns_ext.jar')
+    implementation files('libs/mobilepb.jar')
+    implementation files('libs/qalsdk.jar')
+    implementation files('libs/soload.jar')
+    implementation files('libs/tls_sdk.jar')
+    implementation files('libs/wup-1.0.0-SNAPSHOT.jar')
+    compile 'org.greenrobot:greendao:3.2.2'
+}
